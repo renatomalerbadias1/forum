@@ -43,7 +43,7 @@ public class UsuarioControoler {
 	
 	@GetMapping
 	public List<UsuarioDto> lista(String nome) {
-		
+
 		if (nome == null) {
 			List<Usuario> usuario = usuarioRepository.findAll();
 			return UsuarioDto.converter(usuario);
@@ -60,7 +60,7 @@ public class UsuarioControoler {
 	
 	@PostMapping
 	public ResponseEntity<UsuarioDto> cadstrar(@RequestBody @Valid UsuarioForm form , UriComponentsBuilder uriBuilder) {
-		
+		//
 		Usuario usuario = form.converter();
 		usuarioRepository.save(usuario);
 		
@@ -72,7 +72,7 @@ public class UsuarioControoler {
 	
 	/**
 	 * 
-	 * detalhe do usuario
+	 * Detalhe do usuario
 	 */
 
 	@GetMapping("/{id}")
